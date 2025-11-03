@@ -1,0 +1,206 @@
+Create a React application (using functional components + React Router + Tailwind CSS) that includes:
+
+🧩 Login Component
+
+File: src/pages/Login.js
+
+Requirements:
+
+Build a centered login form (username, password, and login button).
+
+Use Axios to send a POST request to:
+
+http://localhost:8080/api/auth/login
+
+
+On successful login, receive a JSON response:
+
+{ "token": "eyJhbGciOiJIUzI1NiJ9..." }
+
+
+Decode the JWT token using atob to extract the payload and read the "roles" field.
+
+If "roles" = "ROLE_ADMIN", redirect to /admin-dashboard.
+
+If "roles" = "ROLE_USER", redirect to /user-dashboard.
+
+Store the JWT in localStorage.
+
+Handle invalid credentials with an error message.
+
+Use minimal styling (Tailwind) for a clean, centered login form.
+
+🧭 Routing Setup
+
+Use React Router for navigation:
+
+/ → Login Page
+
+/admin-dashboard → Admin UI
+
+/user-dashboard → Employee/User UI
+
+Example routes in App.jsx.
+
+🏢 ADMIN DASHBOARD UI
+
+Framework: React + Tailwind CSS
+Theme: Corporate blue (#1E3A8A primary, Sky Blue accent)
+Design: Modern, card-based layout
+
+Admin Layout
+
+Fixed Sidebar (Sidebar.jsx)
+
+Top Navbar (Navbar.jsx)
+
+Main content area for different sections
+
+Sidebar Menu
+
+Dashboard
+
+Employees
+
+Projects
+
+Time Logs
+
+Reports
+
+AI Assistant
+
+Pages under /src/pages/Admin/
+
+Dashboard.jsx
+
+KPI cards for: Active Projects, Total Employees, Productivity %
+
+Small bar or line chart for trends (use recharts)
+
+Employees.jsx
+
+Table with name, role, productivity, status
+
+Search and filter options
+
+Projects.jsx
+
+Grid/Table showing project name, progress bar, deadline
+
+TimeLogs.jsx
+
+Table view with employee name, project, hours, date
+
+Reports.jsx
+
+Tabs for Weekly and Monthly summaries (bar + pie charts)
+
+Assistant.jsx
+
+Right-side chat panel for AI Assistant placeholder
+
+👩‍💻 EMPLOYEE (USER) DASHBOARD UI
+
+When a user logs in (with role = ROLE_USER), redirect to /user-dashboard.
+
+Layout
+
+Sidebar navigation with icons (Dashboard, Time Logs, Projects, AI Assistant)
+
+Top bar with profile picture, name, logout button
+
+Pages under /src/pages/Employee/
+
+Dashboard.jsx
+
+Widgets for:
+
+Time Tracking (Clock-in/out, total hours)
+
+Today’s Tasks (title, status, priority)
+
+Weekly Productivity (small line chart)
+
+TimeLogs.jsx
+
+Table of personal logs (date, hours, project)
+
+Projects.jsx
+
+Grid/list of assigned projects with progress bars and deadlines
+
+Assistant.jsx
+
+Mini chat UI for AI help (text bubble layout)
+
+Features
+
+Use dummy JSON data for demonstration.
+
+Include responsive charts using Recharts.
+
+Use Lucide React for icons:
+
+npm install lucide-react
+
+
+Smooth animations via Framer Motion:
+
+npm install framer-motion
+
+📁 Expected Folder Structure
+/src
+ ├─ components/
+ │   ├─ Sidebar.jsx
+ │   ├─ Navbar.jsx
+ │   ├─ DashboardCard.jsx
+ │   ├─ ChartCard.jsx
+ │   └─ ChatAssistant.jsx
+ ├─ pages/
+ │   ├─ Login.js
+ │   ├─ Admin/
+ │   │   ├─ Dashboard.jsx
+ │   │   ├─ Employees.jsx
+ │   │   ├─ Projects.jsx
+ │   │   ├─ TimeLogs.jsx
+ │   │   ├─ Reports.jsx
+ │   │   └─ Assistant.jsx
+ │   └─ Employee/
+ │       ├─ Dashboard.jsx
+ │       ├─ TimeLogs.jsx
+ │       ├─ Projects.jsx
+ │       └─ Assistant.jsx
+ ├─ App.jsx
+ └─ index.jsx
+
+📊 Libraries to Use
+npm install axios react-router-dom recharts lucide-react framer-motion
+
+🎨 Styling Guidelines
+
+Use Tailwind CSS (npm install -D tailwindcss → npx tailwindcss init)
+
+Fonts: Inter or Poppins
+
+Buttons: Rounded, hover animations
+
+Cards: Rounded-lg, shadow-md, padding-4
+
+Layout: Flex and grid for responsiveness
+
+Color palette:
+
+Primary: #1E3A8A
+
+Accent: #38BDF8
+
+Background: #F9FAFB
+
+🧠 Bonus
+
+Add a “Logout” button that clears localStorage and redirects to /.
+
+Make the UI mobile-friendly with Tailwind’s responsive utilities.
+
+Include subtle fade or slide animations between pages (using Framer Motion).
